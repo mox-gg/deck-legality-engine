@@ -1,0 +1,31 @@
+{
+  "name": "legality_engine",
+  "version": "0.1",
+  "main": "LegalityEngine.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "ava": "^2.3.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register",
+      "@babel/polyfill"
+    ],
+    "babel": {
+      "extensions": [
+        "js"
+      ]
+    }
+  }
+}
