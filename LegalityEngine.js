@@ -52,12 +52,13 @@ const vintageRestricted = [
   "Yawgmoth's Will"
 ];
 
-const noMaximumCards = [
-  "Persistent Petitioners",
-  "Rat Colony",
-  "Relentless Rats",
-  "Shadowborn Apostle"
-];
+const specialtyMaxCards = {
+  "Persistent Petitioners": 999,
+  "Rat Colony": 999,
+  "Relentless Rats": 999,
+  "Shadowborn Apostle": 999,
+  "Seven Dwarves": 7
+};
 
 export const formatOptions = [
   { text: "N/A", value: null, minCards: 0, maxSideboard: 0 },
@@ -139,8 +140,13 @@ export const deckLegal = (deckFormat, {main_deck, sideboard}) => {
   }
 
   forOwn(cards, (value, key) => {
-    if (value > formatRules.maxSingleCard && !noMaximumCards.includes(key)) {
-      errors.push(`You may not have more than ${formatRules.maxSingleCard} copies of ${key}`);
+    if (value > formatRules.maxSingleCard) {
+      if (!has(specialtyMaxCards, key)) {
+        errors.push(`You may not have more than ${formatRules.maxSingleCard} copies of ${key}`);
+      }
+      else if (value > specialtyMaxCards[key]) {
+        errors.push(`You may not have more than ${specialtyMaxCards[key]} copies of ${key}`);
+      }
     }
 
     if (value > 1 && formatRules.restrictedList && formatRules.restrictedList.includes(key)) {
