@@ -1,7 +1,7 @@
 import test from 'ava';
 import { deckLegal } from "./LegalityEngine";
 
-test('A simple legal deck', t => {
+test('Legal - Standard - Simple deck', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -12,10 +12,55 @@ test('A simple legal deck', t => {
   };
 
   const legality = deckLegal("standard", simpleDeck);
-  t.assert(legality.legal);
+  t.true(legality.legal);
 });
 
-test('An illegal vintage deck', t => {
+test('Illegal - Modern - More than four with sideboard', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 57,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }, {
+      name: "Thoughtseize",
+      type_line: "Sorcery",
+      quantity: 3,
+      legal_formats: ["modern", "legacy", "vintage", "commander"]
+    }],
+    sideboard: [{
+      name: "Thoughtseize",
+      type_line: "Sorcery",
+      quantity: 2,
+      legal_formats: ["modern", "legacy", "vintage", "commander"]
+    }]
+  };
+
+  const legality = deckLegal("modern", simpleDeck);
+  t.false(legality.legal);
+});
+
+test('Illegal - Modern - Card not in format', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 57,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }, {
+      name: "Counterspell",
+      type_line: "Instant",
+      quantity: 3,
+      legal_formats: ["legacy", "pauper", "vintage", "commander"]
+    }],
+    sideboard: []
+  };
+
+  const legality = deckLegal("modern", simpleDeck);
+  t.false(legality.legal);
+});
+
+test('Illegal - Vintage - Two of a restricted card', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -32,10 +77,35 @@ test('An illegal vintage deck', t => {
   };
 
   const legality = deckLegal("vintage", simpleDeck);
-  t.assert(legality.legal === false);
+  t.false(legality.legal);
 });
 
-test('A simple legal deck with sideboard', t => {
+test('Illegal - Vintage - Two of a restricted card with sideboard', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 59,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }, {
+      name: "Black Lotus",
+      type_line: "Artifact",
+      quantity: 1,
+      legal_formats: ["vintage"]
+    }],
+    sideboard: [{
+      name: "Black Lotus",
+      type_line: "Artifact",
+      quantity: 1,
+      legal_formats: ["vintage"]
+    }]
+  };
+
+  const legality = deckLegal("vintage", simpleDeck);
+  t.false(legality.legal);
+});
+
+test('Legal - Standard - Simple deck with sideboard', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -52,10 +122,10 @@ test('A simple legal deck with sideboard', t => {
   };
 
   const legality = deckLegal("standard", simpleDeck);
-  t.assert(legality.legal);
+  t.true(legality.legal);
 });
 
-test('An illegal sideboard', t => {
+test('Illegal - Standard - Too many cards in sideboard', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -73,18 +143,17 @@ test('An illegal sideboard', t => {
   };
 
   const legality = deckLegal("standard", simpleDeck);
-  t.assert(legality.legal === false);
+  t.false(legality.legal);
 });
 
-test('An illegal standard deck', t => {
+test('Illegal - Standard - Not enough cards in main deck', t => {
   const simpleDeck = {
     main_deck: [{
         name: "Island",
         type_line: "Basic Land - Island",
         quantity: 50,
         legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
-      },
-      {
+      }, {
         name: "Thoughtseize",
         type_line: "Sorcery",
         quantity: 10,
@@ -94,10 +163,10 @@ test('An illegal standard deck', t => {
   };
 
   const legality = deckLegal("standard", simpleDeck);
-  t.assert(legality.legal === false);
+  t.false(legality.legal);
 });
 
-test('A legal commander deck', t => {
+test('Legal - Commander - Simple deck', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -113,10 +182,10 @@ test('A legal commander deck', t => {
   };
 
   const legality = deckLegal("commander", simpleDeck);
-  t.assert(legality.legal);
+  t.true(legality.legal);
 });
 
-test('All the relentless rats...', t => {
+test('Legal - Modern - Relentless Rats', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Swamp",
@@ -132,29 +201,60 @@ test('All the relentless rats...', t => {
   };
 
   const legality = deckLegal("modern", simpleDeck);
-  t.assert(legality.legal);
+  t.true(legality.legal);
 });
 
-test('All the dwarf deck', t => {
+test('Legal - Modern - Seven Dwarves', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Mountain",
       type_line: "Basic Land - Mountain",
-      quantity: 50,
+      quantity: 56,
       legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
     }, {
       name: "Seven Dwarves",
       type_line: "Creature - Dwarf",
-      quantity: 10,
+      quantity: 4,
+      legal_formats: ["modern", "legacy", "vintage", "commander"]
+    }],
+    sideboard: [{
+      name: "Seven Dwarves",
+      type_line: "Creature - Dwarf",
+      quantity: 3,
       legal_formats: ["modern", "legacy", "vintage", "commander"]
     }]
   };
 
   const legality = deckLegal("modern", simpleDeck);
-  t.assert(legality.legal === false);
+  t.true(legality.legal);
 });
 
-test('An illegal commander deck', t => {
+test('Illegal - Modern - Seven Dwarves', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Mountain",
+      type_line: "Basic Land - Mountain",
+      quantity: 55,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }, {
+      name: "Seven Dwarves",
+      type_line: "Creature - Dwarf",
+      quantity: 5,
+      legal_formats: ["modern", "legacy", "vintage", "commander"]
+    }],
+    sideboard: [{
+      name: "Seven Dwarves",
+      type_line: "Creature - Dwarf",
+      quantity: 5,
+      legal_formats: ["modern", "legacy", "vintage", "commander"]
+    }]
+  };
+
+  const legality = deckLegal("modern", simpleDeck);
+  t.false(legality.legal);
+});
+
+test('Illegal - Commander - Too many cards', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -170,10 +270,10 @@ test('An illegal commander deck', t => {
   };
 
   const legality = deckLegal("commander", simpleDeck);
-  t.assert(legality.legal === false);
+  t.false(legality.legal);
 });
 
-test('An illegal commander sideboard', t => {
+test('Illegal - Commander - Has sideboard', t => {
   const simpleDeck = {
     main_deck: [{
       name: "Island",
@@ -190,5 +290,40 @@ test('An illegal commander sideboard', t => {
   };
 
   const legality = deckLegal("commander", simpleDeck);
-  t.assert(legality.legal === false);
+  t.false(legality.legal);
+});
+
+test('Illegal - Vintage - Banned cards', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Contract from Below",
+      type_line: "Sorcery",
+      quantity: 1,
+      legal_formats: []
+    }, {
+      name: "Hymn of the Wilds",
+      type_line: "Conspiracy",
+      quantity: 4,
+      legal_formats: []
+    }, {
+      name: "Black Lotus",
+      type_line: "Artifact",
+      quantity: 1,
+      legal_formats: ["vintage"]
+    }, {
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 54,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }],
+    sideboard: [{
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 15,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }]
+  };
+
+  const legality = deckLegal("vintage", simpleDeck);
+  t.false(legality.legal);
 });
