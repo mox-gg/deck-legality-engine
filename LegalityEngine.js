@@ -52,7 +52,12 @@ const vintageRestricted = [
   "Yawgmoth's Will"
 ];
 
-
+const noMaximumCards = [
+  "Persistent Petitioners",
+  "Rat Colony",
+  "Relentless Rats",
+  "Shadowborn Apostle"
+];
 
 export const formatOptions = [
   { text: "N/A", value: null, minCards: 0, maxSideboard: 0 },
@@ -112,21 +117,21 @@ const processSection = (deck_section, deckFormat) => {
 
 export const deckLegal = (deckFormat, {main_deck, sideboard}) => {
   const formatRules = formatInfo[deckFormat];
-  let errors = [];
 
   const processed_main_deck = processSection(main_deck, deckFormat);
   const processed_sideboard = processSection(sideboard, deckFormat);
+  let errors = processed_main_deck.errors.concat(processed_sideboard.errors);
 
   const cards = mergeWith(processed_main_deck.cards, processed_sideboard.cards, (src, dest) => {
     return src + dest;
   });
 
   if (processed_main_deck.section_count < formatRules.minCards) {
-    errors.push(`${formatRules.text} requires a minimum of ${formatRules.minCards}`);
+    errors.push(`${formatRules.text} requires a minimum of ${formatRules.minCards} cards`);
   }
 
   if (processed_main_deck.section_count > formatRules.maxCards) {
-    errors.push(`${formatRules.text} requires a maximum of ${formatRules.maxCards}`);
+    errors.push(`${formatRules.text} has a maximum of ${formatRules.maxCards} cards`);
   }
 
   if (processed_sideboard.section_count > formatRules.maxSideboard) {
@@ -134,7 +139,7 @@ export const deckLegal = (deckFormat, {main_deck, sideboard}) => {
   }
 
   forOwn(cards, (value, key) => {
-    if (value > formatRules.maxSingleCard) {
+    if (value > formatRules.maxSingleCard && !noMaximumCards.includes(key)) {
       errors.push(`You may not have more than ${formatRules.maxSingleCard} copies of ${key}`);
     }
 
