@@ -1,0 +1,94 @@
+1 Solemn Simulacrum
+1 Reclamation Sage
+1 Command Tower
+1 Wasteland
+1 Misty Rainforest
+1 Commander's Sphere
+1 Green Sun's Zenith
+1 Thragtusk
+1 Phyrexian Scriptures
+1 Golgari Signet
+1 Breeding Pool
+1 Acidic Slime
+1 Deathrite Shaman
+1 Monastery Siege
+1 Mulldrifter
+1 Myriad Landscape
+1 Windswept Heath
+1 Ghost Quarter
+1 Eternal Witness
+1 Temple of Deceit
+1 Sidisi, Undead Vizier
+1 Baleful Strix
+1 Krosan Grip
+1 Simic Signet
+1 The Eldest Reborn
+1 Caustic Caterpillar
+1 Fleshbag Marauder
+1 Ashnod's Altar
+1 Bane of Progress
+1 Chromatic Lantern
+5 Swamp
+1 Ash Barrens
+1 Siren Stormtamer
+1 Pernicious Deed
+1 Wooded Foothills
+1 Chord of Calling
+1 Verdant Catacombs
+1 Coiling Oracle
+1 Sol Ring
+1 Shriekmaw
+1 Seal of Doom
+1 Ravenous Chupacabra
+1 Journey to Eternity // Atzal, Cave of Eternity
+1 Temple of Mystery
+1 Liliana, Death's Majesty
+1 Yavimaya Elder
+1 Drowned Catacomb
+1 Tasigur, the Golden Fang
+1 Rampant Growth
+1 Mystic Remora
+1 Cultivate
+1 Nevinyrral's Disk
+1 Overgrown Tomb
+1 Spore Frog
+1 Putrefy
+1 The Gitrog Monster
+1 Torrential Gearhulk
+1 Noxious Gearhulk
+1 Toxic Deluge
+3 Island
+4 Forest
+1 Nihil Spellbomb
+1 Secrets of the Dead
+1 The Scarab God
+1 Swiftfoot Boots
+1 Mind Stone
+1 Executioner's Capsule
+1 Woodland Cemetery
+1 Lightning Greaves
+1 Counterspell
+1 Sunken Hollow
+1 Temple of the False God
+1 Titania, Protector of Argoth
+1 Wurmcoil Engine
+1 Strip Mine
+1 Damnation
+1 Cyclonic Rift
+1 Marsh Flats
+1 Temple of Malady
+1 Sakura-Tribe Elder
+1 Muldrotha, the Gravetide
+1 River Kelpie
+1 Polluted Delta
+1 Seal of Primordium
+1 Grave Titan
+1 Flooded Strand
+1 Birthing Pod
+1 Notion Thief
+1 Opulent Palace
+1 Hinterland Harbor
+1 Bloodstained Mire
+1 Watery Grave
+
+Sideboard:
