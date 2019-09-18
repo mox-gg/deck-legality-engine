@@ -327,3 +327,38 @@ test('Illegal - Vintage - Banned cards', t => {
   const legality = deckLegal("vintage", simpleDeck);
   t.false(legality.legal);
 });
+
+test('Legal - N/A - Banned cards in other formats', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Contract from Below",
+      type_line: "Sorcery",
+      quantity: 1,
+      legal_formats: []
+    }, {
+      name: "Hymn of the Wilds",
+      type_line: "Conspiracy",
+      quantity: 4,
+      legal_formats: []
+    }, {
+      name: "Black Lotus",
+      type_line: "Artifact",
+      quantity: 1,
+      legal_formats: ["vintage"]
+    }, {
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 54,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }],
+    sideboard: [{
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 15,
+      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+    }]
+  };
+
+  const legality = deckLegal(null, simpleDeck);
+  t.true(legality.legal);
+});

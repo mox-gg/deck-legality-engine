@@ -117,6 +117,13 @@ const processSection = (deck_section, deckFormat) => {
 };
 
 export const deckLegal = (deckFormat, {main_deck, sideboard}) => {
+  if (deckFormat === null) {
+    return {
+      errors: [],
+      legal: true
+    }
+  }
+
   const formatRules = formatInfo[deckFormat];
 
   const processed_main_deck = processSection(main_deck, deckFormat);
