@@ -1,6 +1,6 @@
 {
-  "name": "legality_engine",
-  "version": "0.1",
+  "name": "@mox-gg/deck-legality-engine",
+  "version": "1.0.0",
   "main": "LegalityEngine.js",
   "license": "MIT",
   "scripts": {
