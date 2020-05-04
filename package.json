@@ -1,11 +1,14 @@
 {
   "name": "@mox-gg/deck-legality-engine",
-  "version": "1.0.2",
-  "main": "src/LegalityEngine.js",
+  "version": "1.0.3",
+  "main": "lib/LegalityEngine.js",
+  "files": [
+    "lib/LegalityEngine.js"
+  ],
   "license": "MIT",
   "scripts": {
     "test": "ava",
-    "build": "NODE_ENV=production pwd && babel . --ignore build,node_modules,test -d lib/",
+    "build": "NODE_ENV=production pwd && babel src/ --ignore build,node_modules,test -d lib/",
     "prepublish": "npm run build"
   },
   "dependencies": {
