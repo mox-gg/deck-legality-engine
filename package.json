@@ -1,10 +1,12 @@
 {
   "name": "@mox-gg/deck-legality-engine",
   "version": "1.0.0",
-  "main": "LegalityEngine.js",
+  "main": "src/LegalityEngine.js",
   "license": "MIT",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "build": "NODE_ENV=production pwd && babel . --ignore build,node_modules,test -d build/",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "lodash": "^4.17.15"
@@ -18,6 +20,9 @@
     "ava": "^2.3.0"
   },
   "ava": {
+    "files": [
+      "src/**/*.test.js"
+    ],
     "require": [
       "@babel/register",
       "@babel/polyfill"
