@@ -1,6 +1,6 @@
 {
   "name": "@mox-gg/deck-legality-engine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "lib/LegalityEngine.js",
   "files": [
     "lib/LegalityEngine.js"
