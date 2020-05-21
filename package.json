@@ -15,12 +15,13 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "@ava/babel": "^1.0.1",
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
-    "ava": "^2.3.0"
+    "ava": "^3.8.2"
   },
   "ava": {
     "files": [
