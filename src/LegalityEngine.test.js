@@ -7,7 +7,7 @@ test('Legal - Standard - Simple deck', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 60,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -21,18 +21,18 @@ test('Illegal - Modern - More than four with sideboard', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 57,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Thoughtseize",
       type_line: "Sorcery",
       quantity: 3,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["pioneer", "modern", "legacy", "vintage", "commander"]
     }],
     sideboard: [{
       name: "Thoughtseize",
       type_line: "Sorcery",
       quantity: 2,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["pioneer", "modern", "legacy", "vintage", "commander"]
     }]
   };
 
@@ -46,7 +46,7 @@ test('Illegal - Modern - Card not in format', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 57,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Counterspell",
       type_line: "Instant",
@@ -66,7 +66,7 @@ test('Illegal - Vintage - Two of a restricted card', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 58,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Black Lotus",
       type_line: "Artifact",
@@ -86,7 +86,7 @@ test('Illegal - Vintage - Two of a restricted card with sideboard', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 59,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Black Lotus",
       type_line: "Artifact",
@@ -111,13 +111,13 @@ test('Legal - Standard - Simple deck with sideboard', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 60,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }],
     sideboard: [{
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 15,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -131,14 +131,14 @@ test('Illegal - Standard - Too many cards in sideboard', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 60,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     },
     ],
     sideboard: [{
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 100,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -152,12 +152,12 @@ test('Illegal - Standard - Not enough cards in main deck', t => {
         name: "Island",
         type_line: "Basic Land - Island",
         quantity: 50,
-        legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+        legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
       }, {
         name: "Thoughtseize",
         type_line: "Sorcery",
         quantity: 10,
-        legal_formats: ["modern", "legacy", "vintage", "commander"]
+        legal_formats: ["pioneer", "modern", "legacy", "vintage", "commander"]
       }
     ]
   };
@@ -172,12 +172,12 @@ test('Legal - Commander - Simple deck', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 99,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Thoughtseize",
       type_line: "Sorcery",
       quantity: 1,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["pioneer", "modern", "legacy", "vintage", "commander"]
     }]
   };
 
@@ -191,12 +191,12 @@ test('Legal - Modern - Relentless Rats', t => {
       name: "Swamp",
       type_line: "Basic Land - Swamp",
       quantity: 10,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Relentless Rats",
       type_line: "Creature - Rat",
       quantity: 50,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -210,18 +210,18 @@ test('Legal - Modern - Seven Dwarves', t => {
       name: "Mountain",
       type_line: "Basic Land - Mountain",
       quantity: 56,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Seven Dwarves",
       type_line: "Creature - Dwarf",
       quantity: 4,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }],
     sideboard: [{
       name: "Seven Dwarves",
       type_line: "Creature - Dwarf",
       quantity: 3,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -235,18 +235,18 @@ test('Illegal - Modern - Seven Dwarves', t => {
       name: "Mountain",
       type_line: "Basic Land - Mountain",
       quantity: 55,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Seven Dwarves",
       type_line: "Creature - Dwarf",
       quantity: 5,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }],
     sideboard: [{
       name: "Seven Dwarves",
       type_line: "Creature - Dwarf",
       quantity: 5,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -260,12 +260,12 @@ test('Illegal - Commander - Too many cards', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 99,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }, {
       name: "Thoughtseize",
       type_line: "Sorcery",
       quantity: 2,
-      legal_formats: ["modern", "legacy", "vintage", "commander"]
+      legal_formats: ["pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -279,13 +279,13 @@ test('Illegal - Commander - Has sideboard', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 100,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }],
     sideboard: [{
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 15,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -314,13 +314,38 @@ test('Illegal - Vintage - Banned cards', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 54,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }],
     sideboard: [{
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 15,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
+    }]
+  };
+
+  const legality = deckLegal("vintage", simpleDeck);
+  t.false(legality.legal);
+});
+
+test('Illegal - Vintage - Lurrus', t => {
+  const simpleDeck = {
+    main_deck: [{
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 60,
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
+    }],
+    sideboard: [{
+      name: "Lurrus of the Dream-Den",
+      type_line: "Legendary Creature — Cat Nightmare",
+      quantity: 1,
+      legal_formats: []
+    }, {
+      name: "Island",
+      type_line: "Basic Land - Island",
+      quantity: 14,
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
@@ -349,13 +374,13 @@ test('Legal - N/A - Banned cards in other formats', t => {
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 54,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }],
     sideboard: [{
       name: "Island",
       type_line: "Basic Land - Island",
       quantity: 15,
-      legal_formats: ["standard", "modern", "legacy", "vintage", "commander"]
+      legal_formats: ["standard", "historic", "pioneer", "modern", "legacy", "vintage", "commander", "pauper"]
     }]
   };
 
