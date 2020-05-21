@@ -62,17 +62,71 @@ const specialtyMaxCards = {
 
 export const formatOptions = [
   { text: "N/A", value: null, minCards: 0, maxSideboard: 0 },
-  { text: "Standard", value: "standard", minCards: 60, maxSideboard: 15, maxSingleCard: 4 },
-  { text: "Modern", value: "modern", minCards: 60, maxSideboard: 15, maxSingleCard: 4 },
-  { text: "Legacy", value: "legacy", minCards: 60, maxSideboard: 15, maxSingleCard: 4 },
-  { text: "Vintage", value: "vintage", minCards: 60, maxSideboard: 15, maxSingleCard: 4, restrictedList: vintageRestricted },
-  { text: "Commander", value: "commander", minCards: 100, maxCards: 100, maxSideboard: 0, maxSingleCard: 1 },
-  { text: "Pauper", value: "pauper", minCards: 60, maxSideboard: 15, maxSingleCard: 4 }
+  {
+    text: "Standard",
+    value: "standard",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4
+  },
+  {
+    text: "Historic",
+    value: "historic",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4
+  },
+  {
+    text: "Pioneer",
+    value: "pioneer",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4
+  },
+  {
+    text: "Modern",
+    value: "modern",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4
+  },
+  {
+    text: "Legacy",
+    value: "legacy",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4
+  },
+  {
+    text: "Vintage",
+    value: "vintage",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4,
+    restrictedList: vintageRestricted
+  },
+  {
+    text: "Commander",
+    value: "commander",
+    minCards: 100,
+    maxCards: 100,
+    maxSideboard: 0,
+    maxSingleCard: 1
+  },
+  {
+    text: "Pauper",
+    value: "pauper",
+    minCards: 60,
+    maxSideboard: 15,
+    maxSingleCard: 4
+  }
 ];
 
 export const dropdownOptions = [
   { text: "N/A", value: null },
   { text: "Standard", value: "standard" },
+  { text: "Historic", value: "historic" },
+  { text: "Pioneer", value: "pioneer" },
   { text: "Modern", value: "modern" },
   { text: "Legacy", value: "legacy" },
   { text: "Vintage", value: "vintage" },
