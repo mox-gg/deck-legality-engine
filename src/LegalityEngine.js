@@ -114,6 +114,14 @@ export const formatOptions = [
     maxSingleCard: 1
   },
   {
+    text: "Brawl",
+    value: "brawl",
+    minCards: 60,
+    maxCards: 60,
+    maxSideboard: 0,
+    maxSingleCard: 1
+  },
+  {
     text: "Pauper",
     value: "pauper",
     minCards: 60,
@@ -131,6 +139,7 @@ export const dropdownOptions = [
   { text: "Legacy", value: "legacy" },
   { text: "Vintage", value: "vintage" },
   { text: "Commander", value: "commander" },
+  { text: "Brawl", value: "brawl" },
   { text: "Pauper", value: "pauper" }
 ];
 

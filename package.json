@@ -1,6 +1,6 @@
 {
   "name": "@mox-gg/deck-legality-engine",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "lib/LegalityEngine.js",
   "files": [
     "lib/LegalityEngine.js"
@@ -12,7 +12,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
