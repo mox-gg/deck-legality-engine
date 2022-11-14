@@ -1,6 +1,6 @@
 {
   "name": "@mox-gg/deck-legality-engine",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "main": "lib/LegalityEngine.js",
   "files": [
     "lib/LegalityEngine.js"
@@ -15,12 +15,12 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@ava/babel": "^1.0.1",
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
+    "@ava/babel": "^2.0.0",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/register": "^7.12.10",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.18.9",
     "ava": "^5.0.1"
   },
   "ava": {
@@ -30,11 +30,6 @@
     "require": [
       "@babel/register",
       "@babel/polyfill"
-    ],
-    "babel": {
-      "extensions": [
-        "js"
-      ]
-    }
+    ]
   }
 }
